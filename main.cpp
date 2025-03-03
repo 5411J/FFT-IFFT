@@ -31,5 +31,16 @@ int main() {
     Eigen::MatrixXcd Y6 = FFTLibrary::ifft(X, 4, 2);
     std::cout << "fft(X, n, 1):\n" << Y6 << "\n\n";
 
+    std::vector <float>r1 = {
+            1,1,1
+    };
+    std::vector<float>r2 = {
+            1,1,0,0,0,1,1
+    };
+    std::vector<float>result = FFTLibrary::convolve(r1,r2);
+    std::cout << "convolve(r1,r2)" << std::endl;
+    for(auto element : result) {
+        std::cout << element << " ";
+    }
     return 0;
 }
